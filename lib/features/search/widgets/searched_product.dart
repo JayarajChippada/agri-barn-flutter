@@ -15,20 +15,23 @@ class SearchedProduct extends StatelessWidget {
           padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: Colors.green.withOpacity(0.6)
+            color: Colors.white
           ),
           child: Row(
             children: [
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  color: Colors.white
+                  //color: Colors.grey.withOpacity(0.4)
                 ),
-                child: Image.network(
-                  product.image,
-                  fit: BoxFit.contain,
-                  height: 160,
-                  width: 135,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.network(
+                    product.image,
+                    fit: BoxFit.fill,
+                    height: 150,
+                    width: 150,
+                  ),
                 ),
               ),
               const SizedBox(width: 15,),
@@ -75,6 +78,15 @@ class SearchedProduct extends StatelessWidget {
                 ],
               )
             ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            height: 0.5,
+            decoration: const BoxDecoration(
+              color: Colors.grey
+            ),
           ),
         )
       ],

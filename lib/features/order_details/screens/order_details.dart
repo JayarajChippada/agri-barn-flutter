@@ -4,7 +4,9 @@ import 'package:appathon/features/product_details/services/product_details_servi
 import 'package:appathon/features/search/screens/search_screen.dart';
 import 'package:appathon/models/orders_model.dart';
 import 'package:appathon/providers/vendor_provider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 
@@ -129,32 +131,45 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     for (int i = 0; i < widget.order.items.length; i++)
-                      Row(
-                        children: [
-                          Image.network(
-                            widget.order.items[i].product.image,
-                            height: 200,
-                            width: 200,
-                            fit: BoxFit.contain,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                widget.order.items[i].product.name,
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                                style: const TextStyle(
-                                    fontSize: 17, fontWeight: FontWeight.bold),
-                              ),
-                              const Text(
-                                "Qty: ${1}",
-                                style: TextStyle(
-                                    fontSize: 17, fontWeight: FontWeight.bold),
-                              ),
-                            ],
-                          )
-                        ],
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Image.network(
+                              widget.order.items[i].product.image,
+                              height: 200,
+                              width: 200,
+                              fit: BoxFit.contain,
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                  width: 150,
+                                  child: Text(
+                                    widget.order.items[i].product.name,
+                                    maxLines: 5,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: const TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 50,
+                                  child: Text(
+                                    "Qty: ${1}",
+                                    overflow: TextOverflow.ellipsis,
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
                       ),
                   ],
                 ),
@@ -228,15 +243,15 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                         ),
                       ],
                     ),
-                    CustomButton(
-                      text: "Mark delivered",
-                      onTap: () async {
-                        print(widget.order.id);
-                        productDetailsServices.orderCompleted(
-                            context: context, id: widget.order.id);
-                        setState(() {});
-                      },
-                    )
+                    // CustomButton(
+                    //   text: "Mark delivered",
+                    //   onTap: () async {
+                    //     print(widget.order.id);
+                    //     productDetailsServices.orderCompleted(
+                    //         context: context, id: widget.order.id);
+                    //     setState(() {});
+                    //   },
+                    // )
                   ],
                 ),
               ),
