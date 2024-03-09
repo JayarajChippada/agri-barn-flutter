@@ -49,16 +49,14 @@ class _SearchScreenState extends State<SearchScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return products == null
-        ? const Loader()
-        : Scaffold(
+    return Scaffold(
             appBar: PreferredSize(
               preferredSize: const Size.fromHeight(60),
               child: AppBar(
                 flexibleSpace: Container(
                   decoration: const BoxDecoration(color: Colors.white),
                 ),
-                title: Row(
+                title:Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Expanded(
@@ -117,7 +115,9 @@ class _SearchScreenState extends State<SearchScreen> {
                 ),
               ),
             ),
-            body: Column(
+            body: products == null
+          ? const Loader()
+          :  Column(
               children: [
                 const SizedBox(
                   height: 10,

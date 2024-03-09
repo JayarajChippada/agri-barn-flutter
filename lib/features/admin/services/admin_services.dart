@@ -74,7 +74,7 @@ class AdminSevices {
         Uri.parse('$uri/vendor/products'),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
-          'Authorization': 'Bearer $jwt'
+          'Authorization': 'Bearer ${prefs.getString('x-auth-token')}'
         },
       );
 

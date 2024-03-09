@@ -6,7 +6,8 @@ import 'package:flutter/material.dart';
 class CartProduct extends StatefulWidget {
   final Product product;
   final int unit;
-  const CartProduct({super.key, required this.product, required this.unit});
+  final String type;
+  const CartProduct({super.key, required this.product, required this.unit, required this.type});
 
   @override
   State<CartProduct> createState() => _CartProductState();
@@ -38,7 +39,7 @@ class _CartProductState extends State<CartProduct> {
                     padding: const EdgeInsets.only(left: 10, top: 5),
                     child: Text(
                       widget.product.name,
-                      style: const TextStyle(fontSize: 16),
+                      style: const TextStyle(fontSize: 16, fontFamily: 'Montserrat', fontWeight: FontWeight.bold),
                       maxLines: 2,
                     ),
                   ),
@@ -46,7 +47,8 @@ class _CartProductState extends State<CartProduct> {
                     width: 200,
                     padding: const EdgeInsets.only(left: 10, top: 5),
                     child: Text(
-                      'Rs.${widget.product.purchasePrice}',
+                      widget.type == 'buy' ?
+                      'Rs.${widget.product.purchasePrice} /${widget.product.purchaseUnit}' : 'Rs.${widget.product.rentalPrice} /${widget.product.rentalUnit}',
                       style: const TextStyle(
                           fontSize: 20, fontWeight: FontWeight.bold),
                       maxLines: 2,

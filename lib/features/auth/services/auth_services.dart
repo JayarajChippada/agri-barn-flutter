@@ -7,6 +7,7 @@ import 'package:appathon/constants/global_variables.dart';
 import 'package:appathon/constants/utils.dart';
 import 'package:appathon/features/admin/screens/admin_screen.dart';
 import 'package:appathon/features/auth/screens/otp_screen.dart';
+import 'package:appathon/models/product_model.dart';
 import 'package:appathon/models/user_model.dart';
 import 'package:appathon/providers/user_provider.dart';
 import 'package:appathon/providers/vendor_provider.dart';
@@ -148,6 +149,35 @@ class AuthService {
     } catch (e) {
       showSnackBar(context, e.toString());
     }
+  }
+
+  Future<List<Product>> fetchAllProducts(BuildContext context) async {
+    List<Product> productList = [];
+    try {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      http.Response res = await http.get(
+        Uri.parse('$uri/farmer/products'),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+          'Authorization': 'Bearer ${prefs.getString('x-auth-token')}'
+        },
+      );
+
+      httpErrorHandles(
+        context: context,
+        response: res,
+        onSuccess: () {
+          for (int i = 0; i < jsonDecode(res.body).length; i++) {
+            productList.add(
+              Product.fromJson(jsonEncode(jsonDecode(res.body)[i])),
+            );
+          }
+        },
+      );
+    } catch (e) {
+      showSnackBar(context, e.toString());
+    }
+    return productList;
   }
 
   //get user data

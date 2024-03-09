@@ -7,6 +7,7 @@ import 'package:appathon/features/auth/screens/auth_screen.dart';
 import 'package:appathon/features/auth/screens/login_screen.dart';
 import 'package:appathon/features/auth/screens/otp_screen.dart';
 import 'package:appathon/features/auth/screens/signup_screen.dart';
+import 'package:appathon/features/categories/screens/categories_screen.dart';
 import 'package:appathon/features/home/screens/category_deals_screen.dart';
 import 'package:appathon/features/home/screens/home_screen.dart';
 import 'package:appathon/features/order_details/screens/order_details.dart';
@@ -45,6 +46,9 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
 
     case MyBottomBar.routeName:
       return MaterialPageRoute(builder: (_) => const MyBottomBar());
+
+    case CategoriesScreen.routeName:
+      return MaterialPageRoute(builder: (_) => const CategoriesScreen());
 
 
     case SearchScreen.routeName:

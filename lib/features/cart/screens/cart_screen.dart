@@ -148,6 +148,7 @@ class _CartScreenState extends State<CartScreen> {
                         ? CartProduct(
                             product: cartList![index].product,
                             unit: cartList![index].unit,
+                            type: cartList![index].type,
                           )
                         : const Loader(),
                   )

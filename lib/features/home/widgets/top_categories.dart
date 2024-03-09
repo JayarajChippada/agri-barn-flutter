@@ -1,17 +1,18 @@
+import 'package:appathon/features/categories/screens/categories_screen.dart';
 import 'package:appathon/features/search/screens/search_screen.dart';
 import 'package:flutter/material.dart';
 
 class TopCategories extends StatelessWidget {
   final List<dynamic> categories;
   const TopCategories({Key? key, required this.categories}) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
-           Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const Text(
@@ -21,7 +22,7 @@ class TopCategories extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
-                  
+                  Navigator.pushNamed(context, CategoriesScreen.routeName);
                 },
                 child: const Text(
                   "View All",
@@ -39,7 +40,7 @@ class TopCategories extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: categories.length,
+              itemCount: 3,
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8),
@@ -48,7 +49,9 @@ class TopCategories extends StatelessWidget {
                     child: Stack(
                       children: [
                         GestureDetector(
-                          onTap: () => Navigator.pushNamed(context, SearchScreen.routeName, arguments: categories[index]['_id']),
+                          onTap: () => Navigator.pushNamed(
+                              context, SearchScreen.routeName,
+                              arguments: categories[index]['_id']),
                           child: Image.network(
                             categories[index]['image'],
                             width: 120,

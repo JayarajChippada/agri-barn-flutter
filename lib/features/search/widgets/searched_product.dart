@@ -52,7 +52,7 @@ class SearchedProduct extends StatelessWidget {
                     width: 200,
                     padding: const EdgeInsets.only(left: 10, top: 5),
                     child: Text(
-                      '\$${product.purchasePrice}',
+                      'Rs. ${product.purchasePrice}',
                       style: const TextStyle(
                           fontSize: 20, fontWeight: FontWeight.bold),
                       maxLines: 2,

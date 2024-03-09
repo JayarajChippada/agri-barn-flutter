@@ -46,7 +46,8 @@ class SearchServices {
 
   Future<Product> fetchProductById(
       {required BuildContext context, required String searchQuery}) async {
-    final user = Provider.of<UserProvider>(context, listen: false).user;
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+    //final user = Provider.of<UserProvider>(context, listen: false).user;
     Product product = Product(
         categoryId: "",
         description: "",
@@ -64,7 +65,7 @@ class SearchServices {
         Uri.parse('$uri/product/$searchQuery'),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
-          'Authorization': 'Bearer ${user.token}'
+          'Authorization': 'Bearer ${prefs.getString('x-auth-token')}'
         },
       );
 

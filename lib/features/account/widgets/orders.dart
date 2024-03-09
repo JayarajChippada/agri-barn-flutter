@@ -70,16 +70,42 @@ class _OrdersState extends State<Orders> {
         // Display orders
 
         Container(
-          height: 170,
+          height: MediaQuery.of(context).size.height*0.7,
           padding: const EdgeInsets.only(left: 10, top: 20, right: 0),
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
+          child: GridView.builder(
+            gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,
+            mainAxisSpacing: 10
+            ),
             itemCount: orders!.length,
             itemBuilder: (context, index) {
               return GestureDetector(
                 onTap: () => navigateToOrdersDetailsScreen(orders![index]),
-                child: SingleProduct(
-                            image: orders![index].items[0].product.image)
+                child: Stack(
+                  children: [
+                    SingleProduct(
+                                image: orders![index].items[0].product.image),
+                    Positioned(
+                              bottom: 25,
+                              left: 20,
+                              child: Container(
+                                //width: 120,
+                                color: Colors.black.withOpacity(0.6),
+                                padding: const EdgeInsets.all(8),
+                                child: Center(
+                                  child: Text(
+                                    orders![index].items[0].product.name,
+                                    style: const TextStyle(
+                                      fontFamily: "Montserrat",
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            )
+                  ],
+                )
               );
             },
           ),

@@ -1,9 +1,11 @@
+import 'package:appathon/features/search/screens/search_screen.dart';
 import 'package:flutter/material.dart';
 
 class MyCategory extends StatelessWidget {
   final String image;
   final String text;
-  const MyCategory({super.key, required this.image, required this.text});
+  final String id;
+  const MyCategory({super.key, required this.image, required this.text, required this.id});
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +17,10 @@ class MyCategory extends StatelessWidget {
           child: Stack(
             children: [
               GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, SearchScreen.routeName,
+                      arguments: id);
+                },
                 child: Image.network(
                   image,
                   width: MediaQuery.of(context).size.width * 0.5,
@@ -29,7 +35,7 @@ class MyCategory extends StatelessWidget {
                   color: Colors.black.withOpacity(0.6),
                   width: MediaQuery.of(context).size.width * 0.5,
                   padding: const EdgeInsets.all(8),
-                  child:  Center(
+                  child: Center(
                     child: Text(
                       text,
                       style: const TextStyle(

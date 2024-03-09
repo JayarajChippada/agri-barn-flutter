@@ -2,6 +2,7 @@
 
 import 'dart:convert';
 
+import 'package:appathon/common/bottom_bar.dart';
 import 'package:appathon/constants/error_handlings.dart';
 import 'package:appathon/constants/global_variables.dart';
 import 'package:appathon/constants/utils.dart';
@@ -60,6 +61,7 @@ class ProductDetailsServices {
         response: res,
         onSuccess: () {
           showSnackBar(context, "Product added to Cart!");
+          Navigator.pushReplacementNamed(context, MyBottomBar.routeName);
         },
       );
     } catch (e) {
