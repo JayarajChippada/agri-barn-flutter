@@ -18,6 +18,8 @@ import 'package:appathon/models/orders_model.dart';
 import 'package:appathon/models/product_model.dart';
 import 'package:flutter/material.dart';
 
+// List of routes for Screens Navigation
+
 Route<dynamic> generateRoute(RouteSettings routeSettings) {
   switch (routeSettings.name) {
     case AuthScreen.routeName:
@@ -113,7 +115,7 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
       var order = routeSettings.arguments as Order;
       return MaterialPageRoute(
           settings: routeSettings,
-          builder: (_) => OrderDetailsScreen(
+          builder: (_) => OrderDetailsVendorScreen(
                 order: order,
               ));
 

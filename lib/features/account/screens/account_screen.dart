@@ -1,4 +1,3 @@
-import 'package:appathon/features/account/widgets/bottom_app_bar.dart';
 import 'package:appathon/features/account/widgets/orders.dart';
 import 'package:appathon/features/account/widgets/top_buttons.dart';
 import 'package:flutter/material.dart';

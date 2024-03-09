@@ -2,7 +2,6 @@ import 'package:appathon/constants/global_variables.dart';
 import 'package:appathon/features/account/screens/account_screen.dart';
 import 'package:appathon/features/cart/screens/cart_screen.dart';
 import 'package:appathon/features/categories/screens/categories_screen.dart';
-import 'package:appathon/features/home/screens/category_deals_screen.dart';
 import 'package:appathon/features/home/screens/home_screen.dart';
 import 'package:appathon/features/inventory/screens/inventory_screen.dart';
 import 'package:flutter/material.dart';

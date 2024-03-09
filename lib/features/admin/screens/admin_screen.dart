@@ -1,6 +1,5 @@
 import 'package:appathon/constants/global_variables.dart';
 import 'package:appathon/features/account/services/account_services.dart';
-import 'package:appathon/features/admin/screens/analytics_screen.dart';
 import 'package:appathon/features/admin/screens/orders_screen.dart';
 import 'package:appathon/features/admin/screens/posts_screen.dart';
 import 'package:flutter/material.dart';

@@ -66,7 +66,6 @@ class AdminSevices {
 
   // get all products
   Future<List<Product>> fetchAllProducts(BuildContext context) async {
-    final user = Provider.of<VendorProvider>(context, listen: false).vendor;
     List<Product> productList = [];
     try {
       SharedPreferences prefs = await SharedPreferences.getInstance();

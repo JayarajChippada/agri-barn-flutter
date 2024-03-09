@@ -5,10 +5,8 @@ import 'package:appathon/constants/error_handlings.dart';
 import 'package:appathon/constants/global_variables.dart';
 import 'package:appathon/constants/utils.dart';
 import 'package:appathon/models/product_model.dart';
-import 'package:appathon/providers/user_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SearchServices {

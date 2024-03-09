@@ -1,5 +1,3 @@
-
-import 'package:appathon/common/bottom_bar.dart';
 import 'package:appathon/constants/utils.dart';
 import 'package:appathon/providers/user_provider.dart';
 import 'package:appathon/providers/vendor_provider.dart';
@@ -26,6 +24,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Agro App',
       onGenerateRoute: ((settings) => generateRoute(settings)),
+
+      // Initial screen when app starts
       home: const SplashScreen()
     );
   }

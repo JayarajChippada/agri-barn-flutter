@@ -1,14 +1,9 @@
-import 'package:appathon/constants/global_variables.dart';
-import 'package:appathon/features/auth/widgets/custom_button.dart';
 import 'package:appathon/features/product_details/services/product_details_services.dart';
 import 'package:appathon/features/search/screens/search_screen.dart';
 import 'package:appathon/models/orders_model.dart';
 import 'package:appathon/providers/vendor_provider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
-import 'package:http/http.dart' as http;
 
 // Define enum for order status
 enum OrderStatus { pending, completed, received, delivered }
@@ -62,7 +57,6 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final user = context.watch<VendorProvider>().vendor;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -174,6 +168,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                   ],
                 ),
               ),
+              
               const SizedBox(
                 height: 10,
               ),

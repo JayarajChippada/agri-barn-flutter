@@ -1,11 +1,9 @@
-import 'package:appathon/constants/global_variables.dart';
+import 'package:appathon/features/admin/screens/admin_screen.dart';
 import 'package:appathon/features/auth/widgets/custom_button.dart';
+import 'package:appathon/features/product_details/services/product_details_services.dart';
 import 'package:appathon/features/search/screens/search_screen.dart';
 import 'package:appathon/models/orders_model.dart';
-import 'package:appathon/providers/vendor_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:http/http.dart' as http;
 
 // Define enum for order status
 enum OrderStatus { pending, completed, received, delivered }
@@ -29,7 +27,7 @@ OrderStatus getOrderStatusFromString(String status) {
 class OrderDetailsVendorScreen extends StatefulWidget {
   static const routeName = 'order-vendor-details';
   final Order order;
-  const OrderDetailsVendorScreen({super.key, required this.order});
+  OrderDetailsVendorScreen({super.key, required this.order});
 
   @override
   State<OrderDetailsVendorScreen> createState() =>
@@ -38,7 +36,7 @@ class OrderDetailsVendorScreen extends StatefulWidget {
 
 class _OrderDetailsVendorScreenState extends State<OrderDetailsVendorScreen> {
   int currentStep = 0;
-
+  ProductDetailsServices productDetailsServices = ProductDetailsServices();
   void navigateToSearchScreen(String searchQuery) {
     Navigator.pushNamed(context, SearchScreen.routeName,
         arguments: searchQuery);
@@ -59,7 +57,6 @@ class _OrderDetailsVendorScreenState extends State<OrderDetailsVendorScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final user = context.watch<VendorProvider>().vendor;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -128,32 +125,45 @@ class _OrderDetailsVendorScreenState extends State<OrderDetailsVendorScreen> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     for (int i = 0; i < widget.order.items.length; i++)
-                      Row(
-                        children: [
-                          Image.network(
-                            widget.order.items[i].product.image,
-                            height: 200,
-                            width: 200,
-                            fit: BoxFit.contain,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                widget.order.items[i].product.name,
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                                style: const TextStyle(
-                                    fontSize: 17, fontWeight: FontWeight.bold),
-                              ),
-                              const Text(
-                                "Qty: ${1}",
-                                style: TextStyle(
-                                    fontSize: 17, fontWeight: FontWeight.bold),
-                              ),
-                            ],
-                          )
-                        ],
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Image.network(
+                              widget.order.items[i].product.image,
+                              height: 150,
+                              width: 150,
+                              fit: BoxFit.contain,
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                  width: 150,
+                                  child: Text(
+                                    widget.order.items[i].product.name,
+                                    maxLines: 5,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: const TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                                 SizedBox(
+                                  width: 50,
+                                  child: Text(
+                                    "Qty: ${widget.order.items[i].unit}",
+                                    overflow: TextOverflow.ellipsis,
+                                    style: const TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
                       ),
                   ],
                 ),
@@ -232,17 +242,22 @@ class _OrderDetailsVendorScreenState extends State<OrderDetailsVendorScreen> {
                         ),
                       ],
                     ),
-                     CustomButton(
+                    CustomButton(
                       text: "Mark delivered",
                       onTap: () async {
-                        await http.patch(Uri.parse(
-                            "$uri/vendor/order-delivered/${widget.order.id}"));
+                        print(widget.order.id);
+                        productDetailsServices.orderCompleted(
+                            context: context, id: widget.order.id);
+                        setState(() {});
+                        Navigator.pushReplacementNamed(
+                          context,
+                          AdminScreen.routeName
+                        );
                       },
                     )
                   ],
                 ),
               ),
-             
             ],
           ),
         ),

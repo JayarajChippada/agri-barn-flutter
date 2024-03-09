@@ -4,7 +4,6 @@ import 'package:appathon/features/auth/services/auth_services.dart';
 import 'package:appathon/features/home/services/home_services.dart';
 import 'package:appathon/features/home/widgets/carousel_slider.dart';
 import 'package:appathon/features/home/widgets/top_categories.dart';
-import 'package:appathon/features/home/widgets/top_products.dart';
 import 'package:appathon/features/product_details/screens/product_details_screen.dart';
 import 'package:appathon/features/search/widgets/searched_product.dart';
 import 'package:appathon/models/product_model.dart';

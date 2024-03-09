@@ -1,7 +1,6 @@
 import 'package:appathon/common/loader.dart';
 import 'package:appathon/features/account/widgets/single_product.dart';
 import 'package:appathon/features/admin/services/admin_services.dart';
-import 'package:appathon/features/order_details/screens/order_details.dart';
 import 'package:appathon/features/order_details/screens/order_details_vendor.dart';
 import 'package:appathon/models/orders_model.dart';
 import 'package:flutter/material.dart';
