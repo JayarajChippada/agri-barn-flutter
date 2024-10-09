@@ -6,7 +6,7 @@ This innovative **Flutter** application serves as a comprehensive e-commerce sol
 
 ## 🚀 Features
 
-- **User-friendly Interface**: Easy-to-navigate screens for bank transactions.
+- **User-friendly Interface**: Easy-to-navigate between screens.
 - **Multiple Functional Screens**: Includes authentication, cart and orders management, inventory management, and more.
 - **Modern UI Design**: Clean and responsive design built for seamless user interaction.
 ---
