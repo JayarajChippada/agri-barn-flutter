@@ -14,12 +14,20 @@ A sleek **Flutter** application designed to empower farmers and vendors to manag
 ## 🖼️ Screenshots
 
 <div style="display: flex; flex-direction: row; justify-content: space-between;">
-    <img src="https://github.com/user-attachments/assets/2770473f-24d2-461a-8b0a-34ea0084d703" alt="Splash-screen" height="300"/>
-    <img src="https://github.com/user-attachments/assets/7e1be44f-c359-4686-a252-e4b2965c2217" alt="Welcome-screen" height="300"/>
-    <img src="https://github.com/user-attachments/assets/bc9bc78a-c1d8-4ceb-aa32-e73ce6af6def" alt="Home-screen" height="300"/>
-    <img src="https://github.com/user-attachments/assets/e299af66-9a4b-44cd-8902-8a60865f6723" alt="Expenses-screen" height="300"/>
-    <img src="https://github.com/user-attachments/assets/c7a3173f-9d9b-4727-9873-ed427f6be16e" alt="Add-card-screen" height="300"/>
-    <img src="https://github.com/user-attachments/assets/6bb1b14d-4e1f-4fb4-8f1f-2de5523cf0ea" alt="Transaction-history-screen" height="300"/>
+    <img src="https://github.com/user-attachments/assets/b969bc0c-bf38-40d5-8f4c-e916de7ac128" alt="Splash-screen" height="300"/>
+    <img src="https://github.com/user-attachments/assets/e5195854-a33f-4b6f-8deb-1eb07cb5201d" alt="Welcome-screen" height="300"/>
+    <img src="https://github.com/user-attachments/assets/6d82db48-2470-4139-8846-3dd421b3bc58" alt="Signup-screen" height="300"/>
+    <img src="https://github.com/user-attachments/assets/b0d5acc8-9eae-4ff0-9d6d-7613b0052981" alt="Farmer-Login-screen" height="300"/>
+    <img src="https://github.com/user-attachments/assets/2076fc62-bc37-4cdd-8429-d455cc964d85" alt="Vendor-Login-screen" height="300"/>
+    <img src="https://github.com/user-attachments/assets/6679be25-e2b3-4a1b-ba42-4a32536ee508" alt="Home-screen" height="300"/>
+    <img src="https://github.com/user-attachments/assets/5a422496-92bb-47e9-aea4-41f162559487" alt="Search-screen" height="300"/>
+    <img src="https://github.com/user-attachments/assets/82e902e7-5c89-437d-9cf0-aba0715afe6a" alt="Cateogry-screen" height="300"/>
+    <img src="https://github.com/user-attachments/assets/604f043d-f2eb-4718-8e8c-d7c26d3699e2" alt="Product-Detail-screen" height="300"/>
+    <img src="https://github.com/user-attachments/assets/0c08da58-b0bf-4db3-b61c-1b3517636b1e" alt="Inventory-screen" height="300"/>
+    <img src="https://github.com/user-attachments/assets/d9ade874-ee1f-4e00-b5a6-bd1b045d178a" alt="Cart-screen" height="300"/>
+    <img src="https://github.com/user-attachments/assets/8e002e43-6199-4e81-a890-18e88cff2afc" alt="Orders-screen" height="300"/>
+    <img src="https://github.com/user-attachments/assets/1080c7c2-9aa4-4cf3-bd0e-a30874cb736e" alt="Vendor-screen" height="300"/>
+    <img src="https://github.com/user-attachments/assets/017d8e26-a1c9-4ed1-87da-5ce69e68fd00" alt="Add-Product-screen" height="300"/>
 </div>
 
 ---
