@@ -1,6 +1,6 @@
 # 🌾 Agribarn
 
-A sleek **Flutter** application designed to empower farmers and vendors to manage agricultural products and transactions. This app streamlines product procurement, inventory management, and secure transactions, aiming to enhance operational efficiency for farmers and vendors.
+This innovative **Flutter** application serves as a comprehensive e-commerce solution for farmers and vendors, facilitating the management of agricultural products and transactions. With robust inventory management features, users can easily track stock levels and update product availability in real-time. The app also offers streamlined order and cart management, allowing users to efficiently handle customer orders, manage their shopping carts, and ensure a smooth purchasing experience. Additionally, it supports secure transactions through integration with Google Pay, providing a seamless payment process that enhances the overall efficiency of agricultural operations. By bringing together these essential functionalities, the application empowers farmers and vendors to optimize their business processes and improve their profitability.
 
 ---
 
